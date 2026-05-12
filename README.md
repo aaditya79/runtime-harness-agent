@@ -243,9 +243,31 @@ MatchOdds-AI/
 
 ---
 
-## Author
+## Runtime Harness
 
-**Aaditya Pai** — agent architecture, multi-agent debate, backtest harness, data pipelines, vector store, CoT baseline, evaluation, ablations, frontend, backend, report
+A validate-trace-enforce layer wrapping the multi-agent debate system, built as a research prototype for trustworthy financial LLMs.
+
+**Three enforcement rules, applied in priority order:**
+
+| Rule | Trigger | Action |
+|---|---|---|
+| Prob coherence | `home_win_prob + away_win_prob` deviates from 1.0 by > 2 % | `BLOCK` |
+| Agent disagreement | Spread across debate agents' `home_win_prob` exceeds 15 % | `ESCALATE` |
+| Stat citation | A cited stat deviates from ground-truth by > 15 % | `REVISE` |
+| All clear | — | `PASS` |
+
+**Components (`harness/`):**
+
+- `models.py` — `EnforcementAction`, `ValidationResult`, `TraceRecord` (SHA-256 hashed), `HarnessResult`
+- `tracer.py` — `Tracer` with a `trace_tool()` context manager, `log_agent_state()`, and `finalize()`
+- `validator.py` — `Validator` checks probability coherence and stat citation consistency against an optional ground-truth dict
+- `guardrail.py` — `GuardrailEngine` maps validation + trace to an enforcement action
+- `engine.py` — `run_with_harness()` wires all three layers around any `run_full_debate()` or `run_agent()` call
+
+**Demo:**
+```bash
+python test_harness.py   # live debate run + BLOCK injection + REVISE injection → 3/3 rules verified
+```
 
 ---
 
