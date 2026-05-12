@@ -1,0 +1,15 @@
+method,bin,n_games,avg_pred_home_win_prob,actual_home_win_rate,abs_gap
+chain_of_thought,"(-0.001, 0.2]",6,0.1317,0.3333,0.2017
+chain_of_thought,"(0.2, 0.4]",41,0.3276,0.439,0.1115
+chain_of_thought,"(0.4, 0.6]",28,0.4971,0.5357,0.0386
+chain_of_thought,"(0.6, 0.8]",52,0.6819,0.7115,0.0296
+chain_of_thought,"(0.8, 1.0]",5,0.876,1.0,0.124
+multi_agent_debate,"(0.2, 0.4]",29,0.3231,0.5862,0.2631
+multi_agent_debate,"(0.4, 0.6]",62,0.5197,0.629,0.1094
+multi_agent_debate,"(0.6, 0.8]",36,0.6789,0.5556,0.1233
+multi_agent_debate,"(0.8, 1.0]",5,0.84,0.2,0.64
+single_agent,"(-0.001, 0.2]",2,0.175,0.5,0.325
+single_agent,"(0.2, 0.4]",27,0.3248,0.6667,0.3419
+single_agent,"(0.4, 0.6]",25,0.5304,0.64,0.1096
+single_agent,"(0.6, 0.8]",59,0.7031,0.5254,0.1776
+single_agent,"(0.8, 1.0]",12,0.88,0.6667,0.2133

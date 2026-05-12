@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+python-dotenv
+anthropic
+openai
+nba_api
+pandas
+numpy
+matplotlib
+chromadb
+beautifulsoup4
+feedparser
+requests
+google-api-python-client
+vaderSentiment

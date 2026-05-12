@@ -1,0 +1,14 @@
+anthropic
+beautifulsoup4
+chromadb
+feedparser
+google-api-python-client
+nba_api
+nbainjuries
+numpy
+pandas
+python-dotenv
+requests
+streamlit
+vaderSentiment
+matplotlib

@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(37, 99, 235, 0.18), transparent 60%),
+      radial-gradient(900px 400px at -10% 30%, rgba(255, 107, 53, 0.12), transparent 60%),
+      radial-gradient(800px 700px at 50% 100%, rgba(15, 23, 42, 0.6), transparent 70%),
+      #070b14;
+    background-attachment: fixed;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  /* Scrollbar — subtle, dark mode */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-white/[0.07] bg-bg-panel/80 backdrop-blur-xl shadow-card;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0));
+  }
+
+  .panel-strong {
+    @apply rounded-2xl border border-white/10 bg-bg-panel2 shadow-card;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-300;
+  }
+
+  .chip-accent {
+    @apply chip border-accent/30 bg-accent/10 text-accent-glow;
+  }
+
+  .label {
+    @apply text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400;
+  }
+
+  .heading {
+    @apply font-display text-2xl font-bold tracking-tight text-slate-50;
+  }
+
+  .subheading {
+    @apply font-display text-sm font-semibold tracking-tight text-slate-200;
+  }
+
+  .body-muted {
+    @apply text-sm leading-relaxed text-slate-400;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-slate-200 transition-all hover:border-white/20 hover:bg-white/[0.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn border-transparent bg-gradient-to-r from-accent to-accent-glow text-bg shadow-ember hover:from-accent-glow hover:to-accent;
+  }
+
+  .btn-ghost {
+    @apply btn border-transparent bg-transparent hover:bg-white/[0.04];
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition-all focus:border-accent/40 focus:bg-white/[0.06];
+  }
+
+  .stat-card {
+    @apply panel flex flex-col gap-1.5 px-4 py-3;
+  }
+
+  .glow-divider {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 107, 53, 0.4),
+      rgba(37, 99, 235, 0.4),
+      transparent
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scroll-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+}

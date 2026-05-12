@@ -1,0 +1,16 @@
+{
+  "n_games_requested": 150,
+  "season_filter": "2024-25",
+  "min_games_history": 10,
+  "ablation": "",
+  "candidate_games_selected": 150,
+  "games_skipped": 18,
+  "failed_method_calls": 7,
+  "prediction_rows": 389,
+  "unique_games_completed": 132,
+  "methods_present": [
+    "chain_of_thought",
+    "multi_agent_debate",
+    "single_agent"
+  ]
+}
