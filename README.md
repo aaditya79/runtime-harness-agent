@@ -228,6 +228,13 @@ MatchOdds-AI/
 ├── nba_backtest.py            # evaluation harness
 ├── nba_cost_logger.py         # per-call cost tracking
 ├── nba_*_pipeline.py          # data collection (6 pipelines)
+├── harness/                   # validate-trace-enforce runtime layer
+│   ├── models.py              # EnforcementAction, TraceRecord, HarnessResult, …
+│   ├── tracer.py              # Tracer — trace_tool(), log_agent_state(), finalize()
+│   ├── validator.py           # Validator — prob coherence + stat citation checks
+│   ├── guardrail.py           # GuardrailEngine — PASS / BLOCK / REVISE / ESCALATE
+│   └── engine.py              # run_with_harness() — wires all three layers
+├── test_harness.py            # harness demo: live run + BLOCK + REVISE injection
 ├── data/sample/               # example CSVs for reproducibility
 ├── fig_*.png                  # publication-quality figures
 ├── report.tex / report.pdf    # 13-page research paper
@@ -236,15 +243,9 @@ MatchOdds-AI/
 
 ---
 
-## Team
+## Author
 
-| Member | Contributions |
-|---|---|
-| **Aaditya Pai** | Agent architecture, multi-agent debate, backtest harness, evaluation, ablations, report |
-| **Pranav Jain** | Data pipelines, vector store, CoT baseline |
-| **Tanish Patel** | React frontend, FastAPI backend, deployment |
-
-*STAT GR5293: Generative AI Using LLMs · Spring 2026 · Columbia University*
+**Aaditya Pai** — agent architecture, multi-agent debate, backtest harness, data pipelines, vector store, CoT baseline, evaluation, ablations, frontend, backend, report
 
 ---
 
